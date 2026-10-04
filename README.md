@@ -1,42 +1,44 @@
-﻿# HUMM
+# HUMM
 
 **HUMM — High-fidelity Universal Music Machine — Digital audio player**
 
-Lecteur audio numérique hi-fi basé sur une **HummingBoard i2eX**.
+HUMM est un lecteur audio numérique haute fidélité en cours de construction, basé sur une **HummingBoard i2eX**. Le socle de lecture a été validé sur le matériel réel ; l'interface et les outils d'administration restent à développer.
 
 ## État du projet
 
-Projet en phase de conception et de mise en place de l'architecture matérielle et logicielle.
+- ✅ **Lecture audio validée sur matériel réel** : Linux / Armbian, MPD, ALSA et codec SGTL5000.
+- ✅ **Bibliothèque locale** stockée sur le mSATA.
+- ✅ **Arrêt propre** avec `sudo poweroff` avant de déconnecter l'alimentation.
+- 🟡 Le projet est en cours de construction ; la documentation distingue les validations des travaux à venir.
+- ⚪ L'interface complète et l'administration de la bibliothèque sont prévues, pas encore implémentées.
 
-À ce stade, la HummingBoard a été configurée et le système audio de base est en cours de préparation.
+## Plateforme
 
-## Objectifs
-
-- lecture audio numérique haute fidélité ;
-- fonctionnement autonome, sans PC nécessaire à l'utilisation courante ;
-- gestion d'une bibliothèque musicale locale ;
-- lecture via MPD ;
-- interface de contrôle dédiée ;
-- affichage local sur écran ;
-- architecture évolutive et documentée.
-
-## Matériel
-
-- HummingBoard i2eX
-- stockage local de la bibliothèque musicale
-- interface audio haute fidélité
-- écran local en cours d'étude
-
-## Logiciel
-
-- Linux / Armbian
-- MPD
-- scripts et services HUMM à venir
+| Élément | Choix |
+| --- | --- |
+| Carte | HummingBoard i2eX |
+| Système | Linux / Armbian |
+| Moteur de lecture | MPD |
+| Sortie audio | ALSA + codec SGTL5000 |
+| Bibliothèque locale | mSATA |
+| Volume PCM ALSA de référence | `numid=1` = `180` |
 
 ## Documentation
 
-La documentation du projet sera progressivement ajoutée au dépôt au fur et à mesure de sa construction.
+- [Statut du projet](docs/STATUS.md)
+- [Architecture](docs/ARCHITECTURE.md)
+- [Audio](docs/AUDIO.md)
+- [Exploitation](docs/OPERATIONS.md)
+- [Bibliothèque](docs/LIBRARY.md)
+- [Expérience utilisateur](docs/UX.md)
+- [Feuille de route](docs/ROADMAP.md)
+- [Sécurité](docs/SECURITY.md)
+- [Journal des changements](CHANGELOG.md)
 
----
+## Statuts
 
-*Projet personnel — dépôt privé.*
+- ✅ vérifié/validé sur matériel réel
+- 🟡 en cours
+- ⚪ prévu
+
+Le dépôt public ne contient ni fichiers musicaux, ni base de données privée, ni secrets ou données personnelles. Voir [SECURITY.md](docs/SECURITY.md).
